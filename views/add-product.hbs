@@ -1,1 +1,35 @@
 <h3>Добавление продукта</h3>
+<form action="/" method="POST" >
+<div class="mb-3">
+  <label for="title" class="form-label">Продукт</label>
+  <input type="text" name="title" class="form-control" id="exampleFormControlInput1" placeholder="Название продукта"  required>
+    <div class="valid-feedback">
+      Введите корректное наименование
+    </div>
+</div>
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Цена</label>
+  <input type="number" name="price" class="form-control" id="exampleFormControlInput1"  required >
+      <div class="valid-feedback">
+      Введите корректную цену
+    </div>
+</div>
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Изображение</label>
+  <input type="text" name="title" class="form-control" id="exampleFormControlInput1" placeholder="Ссылка на картинку" required>
+      <div class="valid-feedback">
+      Введите корректную ссылку
+    </div>
+
+</div>
+<div class="mb-3">
+  <label for="desc" class="form-label">Описание</label>
+  <textarea class="form-control" name="desc" id="desc" rows="3" title="Описание курса"></textarea>
+    <div class="valid-feedback">
+      Введите корректное описание
+    </div>
+</div>
+<div class="mb-3">
+    <button class="btn btn-primary">Сохранить</button>
+</div>
+</form>

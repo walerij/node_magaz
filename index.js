@@ -4,8 +4,19 @@ const express = require("express")
 const HomeRouter = require("./routes/home")
 const ProductRouter = require("./routes/products")
 const app = express()
+/**представления */
+const expresshbs = require("express-handlebars")
+const hbs =expresshbs.create({
+    defaultLayout:"main",
+    extname:"hbs"
+})
+/**представления подключены */
 
-
+/**подключаем hbs к модели */
+app.engine('hbs', hbs.engine)
+app.set("view engine","hbs")
+app.set("views","views")
+/**подключено */
 app.use('/', HomeRouter)
 app.use('/products', ProductRouter)
 

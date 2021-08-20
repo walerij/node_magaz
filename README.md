@@ -1,1 +1,1 @@
-# node_magaz
+# node_magaz электронный магазин

@@ -8,12 +8,12 @@ router.get("/", async (req,res)=>{
 )
 
 router.get("/list",async (req,res)=>{
-    await res.send("Вывод списка товаров")
+    await res.render("products")
 }         
 )
 
 router.get("/add",async (req,res)=>{
-    await res.send("Добавление товара")
+    await res.render("add-product")
 }         
 )
 router.get("/:id/edit",async (req,res)=>{

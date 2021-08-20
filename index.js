@@ -1,14 +1,16 @@
 const express = require("express")
 
+
+const HomeRouter = require("./routes/home")
+const ProductRouter = require("./routes/products")
 const app = express()
 
-app.get('/',(req,res)=>{
-    res.send("Главная")
-})
 
-app.get('/product',(req,res)=>{
-    res.send("Товары")
-})
+app.use('/', HomeRouter)
+app.use('/products', ProductRouter)
+
+
+
 
 
 const PORT = process.env.PORT||3000

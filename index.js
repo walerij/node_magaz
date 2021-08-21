@@ -17,6 +17,10 @@ app.engine('hbs', hbs.engine)
 app.set("view engine","hbs")
 app.set("views","views")
 /**подключено */
+
+app.use(express.static('public'))
+app.use(express.urlencoded({extended:true}))
+
 app.use('/', HomeRouter)
 app.use('/products', ProductRouter)
 

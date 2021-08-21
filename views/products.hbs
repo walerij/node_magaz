@@ -1,3 +1,9 @@
-<h2>
-    Товарчики
-</h2>
+
+{{#if product.length}}
+<div class="row">
+    {{#each product}}
+    {{> product-view}}
+    {{/each}}
+</div>
+
+{{/if}}

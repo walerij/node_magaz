@@ -5,7 +5,8 @@ const router = Router()
 const Product = require('../models/product')
 
 router.get("/", async (req,res)=>{
-   await res.render("products")
+    let product = await Product.getAll()  
+   await res.render("products",{product})
 }
 )
 

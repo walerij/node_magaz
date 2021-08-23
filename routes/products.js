@@ -6,14 +6,14 @@ const Product = require('../models/product')
 
 router.get("/", async (req,res)=>{
     let product = await Product.getAll()  
-   await res.render("products",{product})
+   await res.render("products",{isActive:true, product})
 }
 )
 
 
 
 router.get("/add",async (req,res)=>{
-    await res.render("add-product")
+    await res.render("add-product", {isActive:true})
 }         
 )
 

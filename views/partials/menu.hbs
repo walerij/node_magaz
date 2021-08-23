@@ -6,9 +6,23 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page" href="/">Главная</a>
-        <a class="nav-link" href="/products">Товары</a>
-        <a class="nav-link" href="/products/add">Добавление товара</a>
+        <a class="nav-link
+                  {{#if isActive}}
+                     active
+                  {{/if}}  
+                  "  href="/">Главная</a>
+        <a class="nav-link
+                  {{#if isActive}}
+                     active
+                  {{/if}}         
+        
+        " href="/products">Товары</a>
+        <a class="nav-link
+                  {{#if isActive}}
+                     active
+                  {{/if}}         
+        
+        " href="/products/add">Добавление товара</a>
         
       </div>
     </div>

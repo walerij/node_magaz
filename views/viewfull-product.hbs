@@ -1,0 +1,12 @@
+<div class="card" style="width: 60rem;">
+  <img src="{{product.img}}" class="card-img-top" alt="{{product.title}}">
+  <div class="card-body">
+    <h5 class="card-title">Наименование: {{product.title}}</h5>
+    <p class="card-text">Цена:  <strong>{{product.price}}</strong></p>
+    <p class="card-text">Описание:  <strong>{{product.desc}}</strong></p>
+    <p class="card-text">Статус:  <strong>{{product.status}}</strong></p>
+    <a href="/products/{{id}}/edit/" class="btn btn-dark">Редактировать</a>
+    <a href="/products/{{id}}/setstatus/" class="btn btn-dark">Задать статус</a>
+    <a href="/products/{{id}}/card/" class="btn btn-dark">В корзину</a>
+  </div>
+</div>

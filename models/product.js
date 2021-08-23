@@ -57,6 +57,12 @@ class Product {
 
          })
    }
+
+   static async getById(id)
+   {
+        let product = await Product.getAll() 
+        return product.find(c=>c.id===id)
+   }
    async save()
    {
       

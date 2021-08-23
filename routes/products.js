@@ -10,10 +10,7 @@ router.get("/", async (req,res)=>{
 }
 )
 
-router.get("/list",async (req,res)=>{
-    await res.render("products")
-}         
-)
+
 
 router.get("/add",async (req,res)=>{
     await res.render("add-product")
@@ -42,7 +39,10 @@ router.get("/:id/edit",async (req,res)=>{
 )
 
 router.get("/:id/view",async (req,res)=>{
-    await res.send("Просмотр одного товара")
+   // await res.send("Просмотр одного товара")
+   let product = await Product.getById(req.params.id)
+   
+   res.render('viewfull-product',{product})
 }         
 )
 

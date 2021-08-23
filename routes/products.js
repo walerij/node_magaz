@@ -34,7 +34,10 @@ router.post("/add", async (req,res)=>{
 )
 
 router.get("/:id/edit",async (req,res)=>{
-    await res.send("Редактирование одного товара")
+    let product = await Product.getById(req.params.id)
+    await res.render('edit-products',{
+        product
+    })
 }         
 )
 

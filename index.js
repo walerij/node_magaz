@@ -1,5 +1,6 @@
 const express = require("express")
 
+const mongoose = require('mongoose')
 
 const HomeRouter = require("./routes/home")
 const ProductRouter = require("./routes/products")
@@ -30,6 +31,24 @@ app.use('/products', ProductRouter)
 
 const PORT = process.env.PORT||3000
 
-app.listen(PORT,()=>{
-    console.log("server started on port:"+PORT)
-})
+
+
+async function start(){
+
+
+
+    try {
+        const url ='mongodb+srv://walera:04031979@cluster0.ljues.mongodb.net/eshop'
+        await mongoose.connect(url,{useNewUrlParser:true, useUnifiedTopology: true })
+        //useFindAndModify: false,
+        app.listen(PORT,()=>{
+            console.log("server started on port:"+PORT)
+        })
+    }
+    catch(e)
+    {
+        console.log("Err: "+e)
+    }
+}
+
+start()

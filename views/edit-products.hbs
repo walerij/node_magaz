@@ -1,5 +1,5 @@
 <h3>Добавление продукта</h3>
-<form action="/products/add" method="POST" >
+<form action="/products/edit" method="POST" >
 <div class="mb-3 input-field">
   <label for="title" class="form-label">Продукт</label>
   <input type="text" name="title" id="title" class="form-control" id="title" placeholder="Название продукта"  required value="{{product.title}}">
@@ -30,6 +30,7 @@
     </div>
 </div>
 <div class="mb-3 input-field">
+   <input type="hidden" name='id' value="{{product._id}}">
     <button class="btn btn-primary">Сохранить</button>
 </div>
 </form>

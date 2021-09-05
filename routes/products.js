@@ -44,12 +44,34 @@ router.get("/:id/edit",async (req,res)=>{
     })
 }         
 )
+
+
+
+
 router.post('/edit',async(req,res)=>{
     const {id} = req.body
     delete req.body.id
     await Product.findByIdAndUpdate(id, req.body).lean()
     res.redirect("/products")
 })
+
+
+router.get("/:id/setstatus", async(req, res)=>{
+    let product = await Product.findById(req.params.id).lean()
+    await res.render('setstatus-products',{
+        product
+    })
+
+})
+
+router.post('/setstatus',async(req,res)=>{
+    const {id} = req.body
+    delete req.body.id
+  
+    await Product.findByIdAndUpdate(id, req.body).lean()
+    res.redirect("/products")
+})
+
 router.get("/:id/view",async (req,res)=>{
    // await res.send("Просмотр одного товара")
    let product = await Product.findById(req.params.id).lean()
@@ -58,8 +80,5 @@ router.get("/:id/view",async (req,res)=>{
 }         
 )
 
-router.get("/:id/status",async (req,res)=>{
-    await res.send("Новый статус одного товара")
-}         
-)
+
 module.exports = router

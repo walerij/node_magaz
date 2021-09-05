@@ -1,0 +1,22 @@
+<form action="/products/setstatus" method="POST">
+  <div class="mb-3 input-field">
+    <h2>Задать статус товара</h2>
+  </div>
+    <div class="mb-3 input-field">
+     <select class="form-control" name="status">
+        <option selected value="{{product.status}}">{{product.status}}</option>
+        <option value="wait">wait</option>
+        <option value="public">public</option>
+        <option value="fail">fail</option>
+        <option value="sold">sold</option>
+    </select>
+  </div>
+  <div class="mb-3 input-field">
+   <input type="hidden" name='id' value="{{product._id}}">
+   <button type="submit" class="btn btn-success">Сохранить</button>  
+  </div>
+   
+
+
+
+</form>

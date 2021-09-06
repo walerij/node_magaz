@@ -17,7 +17,6 @@ router.get("/add",async (req,res)=>{
 }         
 )
 
-
 router.post("/add", async (req,res)=>{
      
     let product = new Product(
@@ -71,6 +70,27 @@ router.post('/setstatus',async(req,res)=>{
     await Product.findByIdAndUpdate(id, req.body).lean()
     res.redirect("/products")
 })
+
+
+router.get("/:id/remove", async(req, res)=>{
+    let product = await Product.findById(req.params.id).lean()
+    await res.render('remove-products',{
+        product
+    })
+
+})
+
+router.post('/remove',async(req,res)=>{
+    try{
+        await Product.deleteOne({_id: req.body.id})
+        res.redirect("/products") 
+       }
+       catch(e)
+       {
+           console.log(e)
+       }
+})
+
 
 router.get("/:id/view",async (req,res)=>{
    // await res.send("Просмотр одного товара")

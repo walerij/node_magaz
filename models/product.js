@@ -24,6 +24,10 @@ const product = new Schema({
     status: {
         type: String,
         required: true
+    },
+    userID:{
+        type: Schema.Types.ObjectId,
+        ref: 'User'
     }
 
 })
